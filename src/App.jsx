@@ -9,6 +9,7 @@ import weather from "./assets/weather.jpg";
 import attendence from "./assets/attendence.jpg";
 import flipkart from "./assets/flipkart.jpg";
 import matrix from "./assets/matrix.png";
+import boy from "./assets/boy.png";
 
 import Typewriter from "typewriter-effect";
 // import laptop from "./assets/laptop.jpg";
@@ -24,7 +25,8 @@ function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [contactFormData, setContactFormData] = useState({
+  const [contactFormData, setContactFormData] = useState
+  ({
     name: name,
     email: email,
     message: message,
@@ -38,11 +40,35 @@ function App() {
     setEmail("");
     setMessage("");
   };
+  const projectData=[
+    {
+      name:'Attendence Monitor',
+      img:{attendence},
+      // description:"this project is a full stack application for management of attendence for schools/colleges",
+    },
+    {
+      name:'PlayHub',
+      img:{weather},
+      // description:"project",
+    },
+    {
+      name:'Netflix Clone',
+      img:{flipkart},
+      // description:"project",
+    },
+    {
+      name:'Flipkart CLone',
+      img:{matrix},
+      // description:"project",
+    },
+
+  ]
+
 
   return (
     <>
       <navbar className="navbar">
-        <img className="logo-img" src={nandan} alt="nandan-logo" />
+        {/* <img className="logo-img" src={nandan} alt="nandan-logo" /> */}
         <ul className="navLinks">
           <li>
             <a href="#section1">Home</a>
@@ -92,10 +118,17 @@ function App() {
               loop: true,
             }}
           />
+              <div className="boy-img">
+                <img src={boy} alt="" />
+            </div>
         </div>
+
       </div>
 
       <div id='section2' className="section2-main">
+        <div className="section2-about-me">
+          <span>A</span>bout <span>M</span>e
+          </div>
         <p className="section2-text-box">
           Welcome to my portfolio website! <br />
           I'm Nandan Shrivastava, <br />a dedicated and enthusiastic student
@@ -116,6 +149,7 @@ function App() {
         </p>
       </div>
 
+
       <div id='section3' className="section3-main">
         <div className="skills-contents">
           {skills.map((item, index) => {
@@ -133,12 +167,18 @@ function App() {
       <div id='section4' className="section4-main">
         <p className="projects-title">My Projects</p>
         <div className="projects-thumbnail">
-          <img src={attendence} alt="" href="" />
-          <img src={flipkart} alt="" href="" />
-          <img src={weather} alt="" href="" />
-          <img src={matrix} alt="" href="" />
+            {projectData.map((d) =>(
+              <div>
+                  <div className="projects-details"> 
+                    <p className="projects-name">{d.name}</p>
+                  </div>
+                  <button className="project-btn">Know More</button>
+
+              </div>
+
+            ))}
+          </div>
         </div>
-      </div>
 
       <div id='section5' className="section5-main">
         <p className="text-box-contact">
