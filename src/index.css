@@ -3,15 +3,14 @@
   margin: 0;
   text-decoration: none;
   list-style: none;
-
-
-
 }
 
 * {
   background-color: #1a1a1a;
   font-family: "Ubuntu", sans-serif;
-  color:wheat;}
+  color:wheat;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -22,16 +21,19 @@ button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
+button :hover {
+  background-color: red;
 }
+
+
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -57,6 +59,21 @@ button:focus-visible {
 .logo-img:hover{
   transform: scale(1.05);
 }
+.boy-img img{
+  height: 30rem;
+  width: 23rem;
+  background-color: transparent;
+}
+
+.boy-img img:hover{
+  transform: scale(1.1);
+}
+
+li::first-letter {
+  color: rgb(0, 153, 255);
+  font-size: 1.1rem;
+}
+
 
 .section1-main{
   background-color: #1a1a1a;
@@ -97,40 +114,53 @@ button:focus-visible {
   font-weight: 700;
   font-style: italic;
   font-family: serif;
-  margin-top: 5rem;
   margin-left:2rem;
+  padding-top: 4rem;
+  display: flex;
+  justify-content: space-around;
   
 }
+
+
+
 
 .navbar{
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 0rem;
-  padding: 0.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   border-bottom: 0.0625rem rgb(80, 68, 68) solid;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);  text-decoration: none;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2); 
+  text-decoration: none;
 
 }
 
 .navLinks{
   display: flex;
   flex-direction: row;
-  gap: 4rem;
-  margin-inline: 7rem;
+  gap: 5rem;
+  /* margin-inline: 10rem; */
   list-style: none;
   text-decoration: none;
+
 }
 .navLinks li:hover{
   transform: scale(1.3);
+}
+
+.section2-about-me {
+  color: #747bff;
+  
 }
 
 .section2-text-box{
   text-align:center;
   background: transparent;
   padding: 10rem;
-  padding-top: 15rem;
+  padding-top: 10rem;
   padding-bottom: 13rem;
   justify-content: center;
   border-bottom: 0.0625rem rgb(80, 68, 68) solid;
@@ -205,37 +235,76 @@ button:focus-visible {
   font-weight: 600;
   font-family:cursive;
 }
+
+.projects-thumbnail button:hover{
+  background-color: #6464b4;
+  transform: scale(1.1);
+  border-radius: 50px;
+}
 .projects-thumbnail{
   display: flex;
-  flex-direction: row;
-  gap: 3rem;
-  margin-inline: 3rem;
+}
+.projects-thumbnail div:hover{
+  color: #494949 !important;
+  border-radius: 50px;
+  background-color: #8b8fdd;
+  border-color: #494949 !important;
+  transition: all 1s ease 0s;
+}
+.projects-thumbnail div{ 
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+  background-color: #2a829c;
+  margin-inline: 1rem;
   list-style: none;
+  border-radius:10px ;
+  padding: 1rem;
+  font-family: cursive;
+  font-size: 3rem;
+  display: flex;
+  box-shadow: 3px 4px 5px 2px rgba(234, 235, 241, 0.904);  
+  text-decoration: none;
+  border-radius: 50px;
+
 }
 
+.projects-small-fonts{
+  font-size: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.projects-name{
+  font-size: 1.5rem;
+  background-color: transparent;
+
+}
+.projects-details{
+  justify-content: center;
+  width: 8rem;
+  height: 8rem;
+}
+.projects-details:hover,.projects-details div:hover{
+  transform: rotate(360deg);
+  background-color: transparent;
+}
+.project-btn{
+  border: 1px solid wheat;
+  width: 8rem;
+  align-self: center;
+  background-color: transparent;
+}
+
+
 @media screen and (max-width: 700px) {
-  .projects-thumbnail{
+  .projects-thumbnail div{
     flex-direction: column;
   }
 }
 
-/* .projects-thumbnail div{
-  max-height: 14rem;
-  width: 16rem;
-
-} */
-
-.projects-thumbnail img{
-  width: 20%;
-  border-radius: 10px;
-  box-shadow: 2px 4px 8px 2px rgba(233, 225, 225, 0.2);  text-decoration: none;
-  /* aspect-ratio: 1/1; */
-}
-
-.projects-thumbnail img:hover{
+.projects-thumbnail p:hover{
   transform: scale(1.2);
-  /* transform: translateY(30) */
-  rotate: 5deg;
   transition: rotate 2s;
 }
 
@@ -246,7 +315,7 @@ button:focus-visible {
   flex-direction: column;
   padding: 0.5rem;
   list-style: none;
-  transition: transform 3s linear;
+  transition: transform 1s linear;
 }
 .social-connects{
   position: absolute;
